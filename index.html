@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kai</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <h1>Smart Plug Control</h1>
+      <button class="add-btn" onclick="openCard()">+</button>
+    </div>
+  </header>
+
+  <main>
+    <div id="cards-container"></div>
+
+    <!-- Add Plug Modal -->
+    <div id="plug-card" class="card">
+      <h3>Enter Smart Plug Info</h3>
+      <input type="text" id="plug-id" placeholder="Smart Plug ID" />
+      <input type="text" id="plug-name" placeholder="Smart Plug Name" />
+      <button class="done-btn" id="done-btn" onclick="doneAction()">Done</button>
+      <button class="cancel-btn" id="cancel-btn" onclick="cancelAction()">Cancel</button>
+    </div>
+
+    <!-- Edit Plug Modal -->
+    <div id="settings-modal" class="card settings-modal">
+      <h3>Edit Plug Info</h3>
+      <input type="text" id="edit-plug-id" placeholder="Smart Plug ID" />
+      <input type="text" id="edit-plug-name" placeholder="Smart Plug Name" /> 
+      <button class="save-btn" onclick="saveSettings()">Save</button>
+    </div>
+
+    <!-- Confirm Delete Modal -->
+    <div id="confirm-delete-modal" class="card confirm-modal">
+      <h3>Delete this plug?</h3>
+      <div class="confirm-buttons">
+        <button class="confirm-delete-btn" onclick="confirmDelete()">Yes, Delete</button>
+        <button class="cancel-btn" onclick="cancelDelete()">Cancel</button>
+      </div>
+    </div>
+  </main>
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-database.js"></script>
+
+  <script src="script.js"></script>
+</body>
+</html>
